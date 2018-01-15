@@ -1,0 +1,27 @@
+<div class="layout layout-padding">
+  <h1>{{model.user.display_name}}</h1>
+</div>
+
+<div class="layout layout-padding">
+
+  <div class="flex">
+    <h2>Videos List</h2>
+    {{#paper-list}}
+      {{#each model.videos as |video|}}
+        {{#link-to "video" video.id}}
+          {{#paper-item class="md-3-line"}}
+            <div class="md-list-item-text">
+              <h3>{{video.title}}</h3>
+                <h4>{{stream.user.display_name}}</h4>
+              <p>{{video.view_count}} {{paper-icon "remove red eye"}}</p>
+            </div>
+          {{/paper-item}}
+        {{/link-to}}
+        {{paper-divider}}
+
+
+
+      {{/each}}
+    {{/paper-list}}
+  </div>
+</div>

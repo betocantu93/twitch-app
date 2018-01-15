@@ -1,0 +1,28 @@
+<div class="layout layout-padding">
+  <h1>{{model.game.name}}</h1>
+</div>
+
+<div class="layout layout-padding">
+
+  <div class="flex">
+    <h2>Stream List</h2>
+    {{#paper-list}}
+      {{#each model.streams as |stream|}}
+        {{#paper-item class="md-3-line"}}
+          <img src={{stream.thumbnail}} alt={{stream.title}} class="md-avatar">
+          <div class="md-list-item-text">
+            <h3>{{stream.title}}</h3>
+            {{#link-to "user" stream.user.id}}
+              <h4>{{stream.user.display_name}}</h4>
+            {{/link-to}}
+            <p>{{stream.viewer_count}} {{paper-icon "remove red eye"}}</p>
+          </div>
+        {{/paper-item}}
+        {{paper-divider}}
+
+
+
+      {{/each}}
+    {{/paper-list}}
+  </div>
+</div>

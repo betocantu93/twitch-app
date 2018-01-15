@@ -21,6 +21,9 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    ['ember-twitch-normalizer']: {
+      'Client-ID': 'e6s7z3s4x3vt4n0adak3hn8ud8ko6c' // <--- replace with your Twitch App Client ID
     }
   };
 
