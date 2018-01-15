@@ -2,6 +2,10 @@
 
 This is an small app client for Twitch.tv, for educational purposes.
 
+You will be needing this addon:
+ember-twitch-normalizer
+https://github.com/betocantu93/ember-twitch-normalizer
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
