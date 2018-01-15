@@ -1,7 +1,6 @@
 # twitch-app
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is an small app client for Twitch.tv, for educational purposes.
 
 ## Prerequisites
 
@@ -17,6 +16,10 @@ You will need the following things properly installed on your computer.
 * `git clone <repository-url>` this repository
 * `cd twitch-app`
 * `npm install`
+
+After installing the app, continue with:
+
+* `ember install ember-udem-tutorial`
 
 ## Running / Development
 
