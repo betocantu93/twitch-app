@@ -1,0 +1,12 @@
+<div class="layout-column layout-gt-xs-row layout-align-center-center secondary-toolbar">
+  <h2>{{title}}</h2>
+
+  {{#if (has-block)}}
+    {{yield}}
+  {{else}}
+    <span class="flex"></span>
+  {{/if}}
+
+</div>
+
+{{paper-divider}}

@@ -1,27 +1,30 @@
-<div class="layout layout-padding">
-  <h1>{{model.user.display_name}}</h1>
+{{page-title title=model.user.display_name}}
+
+<div class="layout layout-align-center-center video-background">
+  {{twitch-video model=model.videos.firstObject}}
 </div>
 
-<div class="layout layout-padding">
+<div class="layout layout-padding layout-wrap flex">
+  {{#each model.videos as |video|}}
 
-  <div class="flex">
-    <h2>Videos List</h2>
-    {{#paper-list}}
-      {{#each model.videos as |video|}}
-        {{#link-to "video" video.id}}
-          {{#paper-item class="md-3-line"}}
-            <div class="md-list-item-text">
-              <h3>{{video.title}}</h3>
-                <h4>{{stream.user.display_name}}</h4>
-              <p>{{video.view_count}} {{paper-icon "remove red eye"}}</p>
-            </div>
-          {{/paper-item}}
-        {{/link-to}}
-        {{paper-divider}}
+      <div class="flex-100 flex-gt-xs-50 flex-gt-sm-25 layout">
+        {{#paper-card class="flex" as |card|}}
+          {{#link-to "video" video.id}}
+            {{card.image  class="img-responsive" src=video.thumbnail alt=video.title title=video.title}}
+            {{#card.header as |header|}}
+              {{#header.text as |text|}}
+                {{#text.subhead}}{{video.title}}{{/text.subhead}}
+                {{#text.subhead}}{{moment-from-now video.published_at}} | {{video.view_count}} {{paper-icon "remove red eye"}} {{/text.subhead}}
+              {{/header.text}}
+            {{/card.header}}
+          {{/link-to}}
+        {{/paper-card}}
+      </div>
+
+  {{else}}
+
+  <h1>Sin Canales</h1>
 
 
-
-      {{/each}}
-    {{/paper-list}}
-  </div>
+  {{/each}}
 </div>

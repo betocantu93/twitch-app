@@ -7,7 +7,8 @@ export default Route.extend({
   store: service(),
 
   model(){
-    return this.get('store').findAll('game');
+    return this.get('store').findAll('game')
+    // return this.get('store').peekAll('game');
   },
 
 

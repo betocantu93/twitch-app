@@ -11,10 +11,9 @@ export default DS.Model.extend({
   title: DS.attr("string"),
   user: DS.belongsTo("user"),
   viewer_count: DS.attr("string"),
-  comunities: DS.hasMany("comunity"),
 
   thumbnail: computed('thumbnail_url', function(){
-    return this.get('thumbnail_url').replace('{width}', 40).replace('{height}', 40);
+    return this.get('thumbnail_url').replace('{width}', 600).replace('{height}', 338);
   }),
 
 

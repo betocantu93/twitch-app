@@ -1,28 +1,29 @@
-<div class="layout layout-padding">
-  <h1>{{model.game.name}}</h1>
-</div>
+{{page-title title=(concat "Canales de " model.game.name)}}
 
-<div class="layout layout-padding">
+<div class="layout layout-padding layout-wrap flex">
+  {{#each model.streams as |stream|}}
 
-  <div class="flex">
-    <h2>Stream List</h2>
-    {{#paper-list}}
-      {{#each model.streams as |stream|}}
-        {{#paper-item class="md-3-line"}}
-          <img src={{stream.thumbnail}} alt={{stream.title}} class="md-avatar">
-          <div class="md-list-item-text">
-            <h3>{{stream.title}}</h3>
-            {{#link-to "user" stream.user.id}}
-              <h4>{{stream.user.display_name}}</h4>
-            {{/link-to}}
-            <p>{{stream.viewer_count}} {{paper-icon "remove red eye"}}</p>
-          </div>
-        {{/paper-item}}
-        {{paper-divider}}
+      <div class="flex-100 flex-gt-xs-50 flex-gt-sm-25 layout">
+        {{#paper-card class="flex" as |card|}}
+          {{#link-to "user" stream.user.id}}
+            {{card.image  class="img-responsive" src=stream.thumbnail alt=stream.title title=stream.title}}
+            {{#card.header as |header|}}
+              {{#header.text as |text|}}
+                {{#text.title}}
+                  {{stream.user.display_name}}
+                {{/text.title}}
+                {{#text.subhead}}{{stream.title}}{{/text.subhead}}
+                {{#text.subhead}}{{stream.viewer_count}} {{paper-icon "remove red eye"}}{{/text.subhead}}
+              {{/header.text}}
+            {{/card.header}}
+          {{/link-to}}
+        {{/paper-card}}
+      </div>
+
+  {{else}}
+
+  <h1>Sin Canales</h1>
 
 
-
-      {{/each}}
-    {{/paper-list}}
-  </div>
+  {{/each}}
 </div>

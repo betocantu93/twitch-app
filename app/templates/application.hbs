@@ -1,11 +1,14 @@
 {{#paper-toolbar}}
   {{#paper-toolbar-tools}}
+
     {{#paper-button iconButton=true}}
       {{paper-icon "menu"}}
     {{/paper-button}}
-    <h2>
-      Ember Twitch
-    </h2>
+    {{#link-to "index"}}
+      <h2>
+        Ember Twitch
+      </h2>
+    {{/link-to}}
     <span class="flex"></span>
     {{#paper-button iconButton=true}}
       {{paper-icon "favorite"}}

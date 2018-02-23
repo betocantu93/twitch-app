@@ -11,10 +11,10 @@ export default DS.Model.extend({
   title: DS.attr("string"),
   url: DS.attr("string"),
   user: DS.belongsTo("user"),
-  view_count: DS.attr("string"),
+  view_count: DS.attr("number"),
   viewable: DS.attr("string"),
   thumbnail: computed('thumbnail_url', function(){
-    return this.get('thumbnail_url').replace('{width}', 240).replace('{height}', 240);
+    return this.get('thumbnail_url').replace('%{width}', 600).replace('%{height}', 338);
   }),
 
 });

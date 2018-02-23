@@ -1,0 +1,12 @@
+{{#paper-form class="layout-column full-width layout-gt-xs-row layout-align-end-center flex" onSubmit=(action 'add') as |form|}}
+
+  {{paper-input class="full-width flex-gt-xs-30" placeholder="Nombre" value=name onChange=(action (mut name))}}
+  {{paper-input class="full-width flex-gt-xs-30" placeholder="Url Imágen" value=url onChange=(action (mut url))}}
+
+  <div class="flex-none layout layout-align-center-center">
+    {{#form.submit-button  raised=true primary=true }}
+      Agregar Juego
+    {{/form.submit-button}}
+  </div>
+
+{{/paper-form}}
