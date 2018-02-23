@@ -2,7 +2,6 @@
 
 <div class="layout layout-padding layout-wrap flex">
   {{#each model.streams as |stream|}}
-
       <div class="flex-100 flex-gt-xs-50 flex-gt-sm-25 layout">
         {{#paper-card class="flex" as |card|}}
           {{#link-to "user" stream.user.id}}
@@ -19,11 +18,7 @@
           {{/link-to}}
         {{/paper-card}}
       </div>
-
   {{else}}
-
-  <h1>Sin Canales</h1>
-
-
+    <h1>Sin Canales</h1>
   {{/each}}
 </div>
